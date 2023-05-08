@@ -4,7 +4,7 @@ import Product from './Product'
 
 const Home = () => {
 
-    const { products, setProducts, setCart } = useContext(ShoppingContext)
+    const { products, setProducts } = useContext(ShoppingContext)
 
     useEffect(() => {
         fetch('https://dummyjson.com/products?limit=10&skip=10&select=title,price,thumbnail')
@@ -19,7 +19,7 @@ const Home = () => {
             <ul className='min-h-screen flex flex-wrap justify-center gap-3 px-[5%]'>
                 {products.map((product, index) => {
                     return (
-                        <Product key={index} product={product} />
+                        <Product key={index} index={index} product={product} />
                     )
                 })}
             </ul>

@@ -17,7 +17,7 @@ const Cart = () => {
                 })}
             </ul>
             <div className='pt-2 mt-2 border-t'>
-                <button onClick={clearCart} className='p-2 rounded-md text-red-600 hover:bg-red-300 bg-opacity-40'>
+                <button onClick={clearCart} className='p-2 rounded-md text-red-600 hover:bg-red-200 bg-opacity-40'>
                     Remover todo
                 </button>
             </div>

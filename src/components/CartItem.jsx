@@ -10,13 +10,22 @@ const CartItem = ({ item }) => {
     return (
         <li className='w-full max-w-[700px] p-5 pt-8 shadow-md relative'>
             <div className='absolute top-1 right-2 bg-white p-2'>
-                <button className='text-red-500 bg-opacity-40 hover:bg-red-200 rounded h-8 aspect-square' onClick={() => {removeFromCart(id, true)}}>X</button>
+                <button className='text-red-500 bg-opacity-40 hover:bg-red-200 p-1 rounded h-8 aspect-square' onClick={() => { removeFromCart(id, true) }}>
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 7H20" stroke="#f05151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path
+                            d="M6 10L7.70141 19.3578C7.87432 20.3088 8.70258 21 9.66915 21H14.3308C15.2974 21 16.1257 20.3087 16.2986 19.3578L18 10"
+                            stroke="#f05151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#f05151" strokeWidth="2"
+                            strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </button>
             </div>
             <div className='flex p-4 gap-x-3 mb-3'>
                 <img className='h-16 aspect-square object-contain' src={thumbnail} alt="" />
                 <div className='h-16'>
                     <p className='mb-4 overflow-hidden whitespace-nowrap text-ellipsis w-32'>{title}</p>
-                    <p>${price}</p>
+                    <p>${price} x {quantity} = ${price * quantity}</p>
                 </div>
             </div>
             <div className='flex justify-center'>
